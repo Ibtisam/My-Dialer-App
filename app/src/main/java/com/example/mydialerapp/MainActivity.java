@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
     public void open_explicit(View v){
         Intent intent = new Intent();
         //creating an explicit intent
-        intent.setClass(this, DialerActivity.class);
+        //intent.setClass(this, DialerActivity.class);
+        intent.setAction("com.example.mydialerapp.MYDIALER");
         //setting data as Uri
         intent.setData(Uri.parse("tel:+923234520282"));
         //starting activity
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     public void open_implicit(View v){
         Intent intent = new Intent();
         //creating an implicit intent, android will decide which activity to start based on intent info
-        //android will openn the default dialer app
+        //android will open the default dialer app
         intent.setAction(Intent.ACTION_DIAL);
         //setting the data as Uri
         intent.setData(Uri.parse("tel:+923234520282"));
