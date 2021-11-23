@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         //intent.setClass(this, DialerActivity.class);
         intent.setAction("com.example.mydialerapp.MYDIALER");
         //setting data as Uri
-        intent.setData(Uri.parse("tel:+923234520282"));
+        intent.setData(Uri.parse("tel:"));
         //starting activity
         startActivity(intent);
     }

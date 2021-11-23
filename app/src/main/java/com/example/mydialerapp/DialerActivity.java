@@ -27,10 +27,12 @@ public class DialerActivity extends AppCompatActivity {
         Intent data = getIntent();
         //getting data parsed as Uri
         Uri uri = data.getData();
-        //converting the Uri to string
-        String telNum = uri.toString();
-        //setting telNum on TextView
-        telNumber.setText(telNum.substring(4));
+        if(uri!=null) {
+            //converting the Uri to string
+            String telNum = uri.toString();
+            //setting telNum on TextView
+            telNumber.setText(telNum.substring(4));
+        }
     }
 
     public void num_b_action(View v) {
@@ -100,6 +102,7 @@ public class DialerActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case 99: {
                 // If request is cancelled, the result arrays are empty.
@@ -114,11 +117,8 @@ public class DialerActivity extends AppCompatActivity {
                 }
                 return;
             }
-
             // other 'case' lines to check for other
             // permissions this app might request.
         }
     }
-
-
 }
